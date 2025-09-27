@@ -1,6 +1,6 @@
 # QwertyFlow: A Minimalist Typing Tutor
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/fajarsodik-ut/qwerty-flow)
 
 QwertyFlow is a modern, minimalist web-based application designed to teach and improve QWERTY keyboard typing skills. The platform focuses on a clean, distraction-free user interface and a structured learning path. It provides real-time feedback, live performance metrics (WPM and Accuracy), and a detailed summary after each lesson. The core experience is broken down into three distinct difficulty levels—Easy, Medium, and Hard—catering to users from absolute beginners to those looking to master advanced symbols and numbers.
 
@@ -82,7 +82,7 @@ This project is optimized for deployment on the Cloudflare network.
 
 You can deploy your own version of this project with a single click.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/fajarsodik-ut/qwerty-flow)
 
 ### Manual Deployment via Wrangler
 
