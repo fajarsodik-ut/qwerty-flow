@@ -14,51 +14,64 @@ import { useLessonStore } from '@/store/lessonStore';
 import { RefreshCw, CheckCircle2, ArrowRight } from 'lucide-react';
 import { saveProgress, hasCompletedAllInLevel } from '@/lib/progressTracker';
 import { CelebrationModal } from './CelebrationModal';
+import { Certification } from './Certification';
+import { Certificate } from './Certificate';
 import { lessons } from '@/lib/lessons';
 import type { Level } from '@/types';
+
 const PerformanceReport: React.FC = () => {
-  const userInput = useLessonStore((s) => s.userInput);
-  const startTime = useLessonStore((s) => s.startTime);
-  const endTime = useLessonStore((s) => s.endTime);
-  const errors = useLessonStore((s) => s.errors);
-  const resetLesson = useLessonStore((s) => s.resetLesson);
-  const status = useLessonStore((s) => s.status);
-  const level = useLessonStore((s) => s.level);
-  const lessonIndex = useLessonStore((s) => s.lessonIndex);
-  const setLesson = useLessonStore((s) => s.setLesson);
-  
+  const {
+    startTime,
+    endTime,
+    errors,
+    resetLesson,
+    status,
+    level,
+    lessonIndex,
+    setLesson,
+    wpm,
+    accuracy,
+  } = useLessonStore();
+
   const [showCelebration, setShowCelebration] = useState(false);
-  
+  const [showCertification, setShowCertification] = useState(false);
+  const [showCertificate, setShowCertificate] = useState(false);
+  const [certificateName, setCertificateName] = useState('');
+
   const problemKeys = React.useMemo(() => {
     if (!errors) return [];
     return Array.from(errors.entries())
       .sort(([, a], [, b]) => b - a)
       .slice(0, 5);
   }, [errors]);
-
   const timeTaken = startTime && endTime ? (endTime - startTime) / 1000 : 0;
-  const minutes = timeTaken / 60;
-  const wpm = minutes > 0 ? Math.round((userInput.length / 5) / minutes) : 0;
-  const totalErrors = errors ? Array.from(errors.values()).reduce((acc, count) => acc + count, 0) : 0;
-  const accuracy = userInput.length > 0 ? Math.max(0, Math.round(((userInput.length - totalErrors) / userInput.length) * 100)) : 100;
-
   // Save progress when lesson is completed
   useEffect(() => {
-    if (status === 'finished' && startTime && endTime) {
-      const progress = saveProgress(level, lessonIndex, wpm, accuracy);
-      
+    if (status === 'finished') {
+      saveProgress(level, lessonIndex, wpm, accuracy);
+
       // Check if all lessons in current level are completed
       const totalLessons = lessons[level].length;
       const completedAll = hasCompletedAllInLevel(level, totalLessons);
-      
+
       if (completedAll) {
-        // Show celebration after a short delay
-        setTimeout(() => setShowCelebration(true), 1000);
+        if (level === 'hard') {
+          setTimeout(() => setShowCertification(true), 1000);
+        } else {
+          // Show celebration for easy and medium levels
+          setTimeout(() => setShowCelebration(true), 1000);
+        }
       }
     }
-  }, [status, level, lessonIndex, wpm, accuracy, startTime, endTime]);
+  }, [status, level, lessonIndex, wpm, accuracy]);
 
-  if (!startTime || !endTime) return null;
+  const handleGenerateCertificate = (name: string) => {
+    setCertificateName(name);
+    setShowCertification(false);
+    setShowCertificate(true);
+  };
+
+  if (status !== 'finished') return null;
   
   const handleOpenChange = (open: boolean) => {
     if (!open) {
@@ -94,11 +107,12 @@ const PerformanceReport: React.FC = () => {
   const currentLevelIndex = levelOrder.indexOf(level);
   const isLastLevel = currentLevelIndex >= levelOrder.length - 1;
   
-  // Hide next button if it's the last lesson in the current level
-  const showNextButton = !isLastLessonInLevel;
+  // Hide next button if it's the last lesson of the 'hard' level
+  const showNextButton = !(isLastLessonInLevel && isLastLevel);
+
   return (
     <>
-      <Dialog open={status === 'finished'} onOpenChange={handleOpenChange}>
+      <Dialog open={status === 'finished' && !showCertificate && !showCertification} onOpenChange={handleOpenChange}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
@@ -169,7 +183,23 @@ const PerformanceReport: React.FC = () => {
         level={level}
         onClose={() => setShowCelebration(false)}
       />
+
+      {showCertification && (
+        <Certification level={level} onGenerate={handleGenerateCertificate} />
+      )}
+
+      {showCertificate && (
+        <Certificate
+          name={certificateName}
+          level={level}
+          onClose={() => {
+            setShowCertificate(false);
+            resetLesson();
+          }}
+        />
+      )}
     </>
   );
 };
+
 export default PerformanceReport;

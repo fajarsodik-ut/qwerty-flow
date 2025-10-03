@@ -14,6 +14,8 @@ export const useLessonStore = create<LessonState>()(
     startTime: null,
     endTime: null,
     errors: new Map(),
+    wpm: 0,
+    accuracy: 100,
     setLesson: (level: Level, lessonIndex: number) => {
       set((state) => {
         state.level = level;
@@ -45,7 +47,28 @@ export const useLessonStore = create<LessonState>()(
           state.cursor += 1;
           if (state.cursor === state.text.length) {
             state.status = 'finished';
-            state.endTime = Date.now();
+            const endTime = Date.now();
+            state.endTime = endTime;
+
+            const startTime = state.startTime!;
+            const timeTaken = (endTime - startTime) / 1000;
+            const minutes = timeTaken / 60;
+
+            state.wpm = minutes > 0 ? Math.round(state.userInput.length / 5 / minutes) : 0;
+
+            const totalErrors = Array.from(state.errors.values()).reduce(
+              (acc, count) => acc + count,
+              0
+            );
+            state.accuracy =
+              state.userInput.length > 0
+                ? Math.max(
+                    0,
+                    Math.round(
+                      ((state.userInput.length - totalErrors) / state.userInput.length) * 100
+                    )
+                  )
+                : 100;
           }
         });
       } else {

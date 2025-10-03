@@ -10,6 +10,8 @@ export interface LessonState {
   startTime: number | null;
   endTime: number | null;
   errors: Map<string, number>;
+  wpm: number;
+  accuracy: number;
   // Actions
   setLesson: (level: Level, lessonIndex: number) => void;
   handleKeyPress: (key: string) => void;
