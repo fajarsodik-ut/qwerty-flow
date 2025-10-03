@@ -16,6 +16,14 @@ const QwertyFlowApp: React.FC = () => {
   const status = useLessonStore((s) => s.status);
   const keydownHandler = useCallback(
     (event: KeyboardEvent) => {
+      // Don't capture keystrokes when typing in input fields or textareas
+      const target = event.target as HTMLElement;
+      const isInputField = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable;
+      
+      if (isInputField) {
+        return; // Allow normal typing in input fields
+      }
+      
       if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
         event.preventDefault();
         handleKeyPress(event.key);

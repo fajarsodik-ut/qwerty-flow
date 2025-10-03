@@ -97,3 +97,23 @@ export const clearLevelProgress = (level: Level) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   return progress;
 };
+
+export const getLevelStats = (level: Level): { meanWpm: number; meanAccuracy: number; completedCount: number } => {
+  const progress = getProgress();
+  const levelLessons = progress.lessonsCompleted.filter(
+    (l) => l.level === level && l.completed
+  );
+
+  if (levelLessons.length === 0) {
+    return { meanWpm: 0, meanAccuracy: 0, completedCount: 0 };
+  }
+
+  const totalWpm = levelLessons.reduce((sum, lesson) => sum + lesson.wpm, 0);
+  const totalAccuracy = levelLessons.reduce((sum, lesson) => sum + lesson.accuracy, 0);
+
+  return {
+    meanWpm: Math.round(totalWpm / levelLessons.length),
+    meanAccuracy: Math.round(totalAccuracy / levelLessons.length),
+    completedCount: levelLessons.length
+  };
+};

@@ -11,6 +11,7 @@ import { RouteErrorBoundary } from '@/components/RouteErrorBoundary';
 import '@/index.css'
 import { HomePage } from '@/pages/HomePage'
 import { LearnPage } from '@/pages/LearnPage'
+import { CertificatePage } from '@/pages/CertificatePage'
 
 // Lazy load the app component
 const QwertyFlowApp = lazy(() => import('@/components/QwertyFlowApp'));
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
   {
     path: "/learn",
     element: <LearnPage />,
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: "/certificate",
+    element: <CertificatePage />,
     errorElement: <RouteErrorBoundary />,
   },
   {
