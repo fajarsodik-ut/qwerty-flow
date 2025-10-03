@@ -4,14 +4,14 @@ import { useLessonStore } from '@/store/lessonStore';
 import { motion } from 'framer-motion';
 import { Target, Clock, Percent } from 'lucide-react';
 const StatCard: React.FC<{ icon: React.ReactNode; label: string; value: string | number; unit?: string }> = ({ icon, label, value, unit }) => (
-  <div className="flex flex-col items-center space-y-1 text-center">
-    <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+  <div className="flex flex-col items-center space-y-0.5 text-center">
+    <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
       {icon}
-      <span className="text-sm font-medium">{label}</span>
+      <span className="text-xs font-medium">{label}</span>
     </div>
-    <div className="text-3xl font-bold tabular-nums text-slate-900 dark:text-slate-50">
+    <div className="text-2xl font-bold tabular-nums text-slate-900 dark:text-slate-50">
       {value}
-      {unit && <span className="text-lg font-medium text-slate-500 dark:text-slate-400 ml-1">{unit}</span>}
+      {unit && <span className="text-sm font-medium text-slate-500 dark:text-slate-400 ml-0.5">{unit}</span>}
     </div>
   </div>
 );
@@ -49,16 +49,16 @@ const StatsDisplay: React.FC = () => {
   };
   return (
     <Card>
-      <CardContent className="p-4 sm:p-6">
+      <CardContent className="p-3 sm:p-4">
         <motion.div
           className="flex justify-around items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <StatCard icon={<Target className="h-4 w-4" />} label="KPM" value={wpm} />
-          <StatCard icon={<Percent className="h-4 w-4" />} label="Akurasi" value={accuracy} unit="%" />
-          <StatCard icon={<Clock className="h-4 w-4" />} label="Waktu" value={formatTime(elapsedTime)} />
+          <StatCard icon={<Target className="h-3.5 w-3.5" />} label="KPM" value={wpm} />
+          <StatCard icon={<Percent className="h-3.5 w-3.5" />} label="Akurasi" value={accuracy} unit="%" />
+          <StatCard icon={<Clock className="h-3.5 w-3.5" />} label="Waktu" value={formatTime(elapsedTime)} />
         </motion.div>
       </CardContent>
     </Card>
