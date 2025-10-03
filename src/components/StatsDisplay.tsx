@@ -56,9 +56,9 @@ const StatsDisplay: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <StatCard icon={<Target className="h-4 w-4" />} label="WPM" value={wpm} />
-          <StatCard icon={<Percent className="h-4 w-4" />} label="Accuracy" value={accuracy} unit="%" />
-          <StatCard icon={<Clock className="h-4 w-4" />} label="Timer" value={formatTime(elapsedTime)} />
+          <StatCard icon={<Target className="h-4 w-4" />} label="KPM" value={wpm} />
+          <StatCard icon={<Percent className="h-4 w-4" />} label="Akurasi" value={accuracy} unit="%" />
+          <StatCard icon={<Clock className="h-4 w-4" />} label="Waktu" value={formatTime(elapsedTime)} />
         </motion.div>
       </CardContent>
     </Card>

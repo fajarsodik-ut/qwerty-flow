@@ -15,21 +15,21 @@ const shiftLayout: { [key: string]: string } = {
 };
 const fingerMap: { [key: string]: string } = {
   // Left Hand
-  '`': 'bg-pink-500/20', '1': 'bg-pink-500/20', 'q': 'bg-pink-500/20', 'a': 'bg-pink-500/20', 'z': 'bg-pink-500/20',
-  '2': 'bg-purple-500/20', 'w': 'bg-purple-500/20', 's': 'bg-purple-500/20', 'x': 'bg-purple-500/20',
-  '3': 'bg-blue-500/20', 'e': 'bg-blue-500/20', 'd': 'bg-blue-500/20', 'c': 'bg-blue-500/20',
-  '4': 'bg-green-500/20', 'r': 'bg-green-500/20', 'f': 'bg-green-500/20', 'v': 'bg-green-500/20',
-  '5': 'bg-green-500/20', 't': 'bg-green-500/20', 'g': 'bg-green-500/20', 'b': 'bg-green-500/20',
+  '`': 'bg-pink-500/50', '1': 'bg-pink-500/50', 'q': 'bg-pink-500/50', 'a': 'bg-pink-500/50', 'z': 'bg-pink-500/50',
+  '2': 'bg-purple-500/50', 'w': 'bg-purple-500/50', 's': 'bg-purple-500/50', 'x': 'bg-purple-500/50',
+  '3': 'bg-blue-500/50', 'e': 'bg-blue-500/50', 'd': 'bg-blue-500/50', 'c': 'bg-blue-500/50',
+  '4': 'bg-green-500/50', 'r': 'bg-green-500/50', 'f': 'bg-green-500/50', 'v': 'bg-green-500/50',
+  '5': 'bg-green-500/50', 't': 'bg-green-500/50', 'g': 'bg-green-500/50', 'b': 'bg-green-500/50',
   // Right Hand
-  '6': 'bg-yellow-500/20', 'y': 'bg-yellow-500/20', 'h': 'bg-yellow-500/20', 'n': 'bg-yellow-500/20',
-  '7': 'bg-yellow-500/20', 'u': 'bg-yellow-500/20', 'j': 'bg-yellow-500/20', 'm': 'bg-yellow-500/20',
-  '8': 'bg-orange-500/20', 'i': 'bg-orange-500/20', 'k': 'bg-orange-500/20', ',': 'bg-orange-500/20',
-  '9': 'bg-red-500/20', 'o': 'bg-red-500/20', 'l': 'bg-red-500/20', '.': 'bg-red-500/20',
-  '0': 'bg-pink-500/20', 'p': 'bg-pink-500/20', ';': 'bg-pink-500/20', '/': 'bg-pink-500/20',
-  '-': 'bg-pink-500/20', '[': 'bg-pink-500/20', "'": 'bg-pink-500/20',
-  '=': 'bg-pink-500/20', ']': 'bg-pink-500/20', '\\': 'bg-pink-500/20',
-  ' ': 'bg-gray-500/20',
-  'shiftleft': 'bg-pink-500/20', 'shiftright': 'bg-pink-500/20',
+  '6': 'bg-yellow-500/50', 'y': 'bg-yellow-500/50', 'h': 'bg-yellow-500/50', 'n': 'bg-yellow-500/50',
+  '7': 'bg-yellow-500/50', 'u': 'bg-yellow-500/50', 'j': 'bg-yellow-500/50', 'm': 'bg-yellow-500/50',
+  '8': 'bg-orange-500/50', 'i': 'bg-orange-500/50', 'k': 'bg-orange-500/50', ',': 'bg-orange-500/50',
+  '9': 'bg-red-500/50', 'o': 'bg-red-500/50', 'l': 'bg-red-500/50', '.': 'bg-red-500/50',
+  '0': 'bg-pink-500/50', 'p': 'bg-pink-500/50', ';': 'bg-pink-500/50', '/': 'bg-pink-500/50',
+  '-': 'bg-pink-500/50', '[': 'bg-pink-500/50', "'": 'bg-pink-500/50',
+  '=': 'bg-pink-500/50', ']': 'bg-pink-500/50', '\\': 'bg-pink-500/50',
+  ' ': 'bg-gray-500/50',
+  'shiftleft': 'bg-pink-500/50', 'shiftright': 'bg-pink-500/50',
 };
 const keyWidths: { [key: string]: string } = {
   'Backspace': 'flex-grow-[2]',
@@ -43,7 +43,7 @@ const keyWidths: { [key: string]: string } = {
 const keyDisplayNames: { [key: string]: string } = {
     'ShiftLeft': 'Shift',
     'ShiftRight': 'Shift',
-    ' ': 'Space'
+    ' ': 'Spasi'
 };
 const Key: React.FC<{ char: string; isNext: boolean }> = ({ char, isNext }) => {
   const baseClass = fingerMap[char.toLowerCase()] || 'bg-gray-500/20';
@@ -53,7 +53,7 @@ const Key: React.FC<{ char: string; isNext: boolean }> = ({ char, isNext }) => {
       animate={isNext ? { scale: [1, 1.1, 1], y: [0, -5, 0] } : {}}
       transition={isNext ? { duration: 0.8, repeat: Infinity, ease: "easeInOut" } : {}}
       className={cn(
-        'relative h-10 sm:h-12 flex-1 flex items-center justify-center rounded-md transition-all duration-150 text-xs sm:text-base',
+        'relative h-8 sm:h-10 flex-1 flex items-center justify-center rounded-md transition-all duration-150 text-xs sm:text-sm',
         isNext ? 'bg-blue-500 text-white' : 'bg-card border',
         keyWidths[char]
       )}
@@ -78,9 +78,9 @@ const VisualKeyboard: React.FC = () => {
   }
   const nextKey = getNextKey();
   return (
-    <div className="space-y-1.5 sm:space-y-2 p-2 sm:p-4 bg-muted/50 dark:bg-muted/20 rounded-lg">
+    <div className="space-y-1 sm:space-y-1.5 p-2 sm:p-3 bg-muted/50 dark:bg-muted/20 rounded-lg max-w-4xl mx-auto">
       {keyLayout.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex justify-center gap-1.5 sm:gap-2">
+        <div key={rowIndex} className="flex justify-center gap-1 sm:gap-1.5">
           {row.map((char) => {
             const isNext = nextKey === char || (isShiftNeeded && (char === 'ShiftLeft' || char === 'ShiftRight'));
             return <Key key={char} char={char} isNext={isNext} />;
