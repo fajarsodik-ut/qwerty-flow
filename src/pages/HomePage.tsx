@@ -56,7 +56,7 @@ export function HomePage() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 px-4">
               <span className="block mb-2">QwertyFlow</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 pb-2">
-                Master Mengetik
+                Belajar Mengetik
               </span>
             </h1>
             
@@ -100,7 +100,7 @@ export function HomePage() {
               Fitur Unggulan
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300">
-              Semua yang kamu butuhkan untuk menjadi master mengetik
+              Semua yang kamu butuhkan untuk belajar mengetik dengan cepat dan akurat
             </p>
           </motion.div>
 
