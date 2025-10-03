@@ -1,14 +1,18 @@
 # QwertyFlow: A Minimalist Typing Tutor
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/fajarsodik-ut/qwerty-flow)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-SITE-ID/deploy-status)](https://app.netlify.com/sites/YOUR-SITE-NAME/deploys)
 
-QwertyFlow is a modern, minimalist web-based application designed to teach and improve QWERTY keyboard typing skills. The platform focuses on a clean, distraction-free user interface and a structured learning path. It provides real-time feedback, live performance metrics (WPM and Accuracy), and a detailed summary after each lesson. The core experience is broken down into three distinct difficulty levels—Easy, Medium, and Hard—catering to users from absolute beginners to those looking to master advanced symbols and numbers.
+QwertyFlow is a modern, minimalist web-based application designed to teach and improve QWERTY keyboard typing skills. The platform focuses on a clean, distraction-free user interface and a structured learning path. It provides real-time feedback, live performance metrics (WPM and Accuracy), detailed summaries after each lesson, and personalized certificates upon completion. The core experience is broken down into three distinct difficulty levels—Easy, Medium, and Hard—catering to users from absolute beginners to those looking to master advanced symbols and numbers.
 
 ## ✨ Key Features
 
 -   **Real-time Feedback**: Instant visual cues for correct (green) and incorrect (red) keystrokes.
 -   **Live Performance Metrics**: Track your Words Per Minute (WPM) and Accuracy as you type.
 -   **Structured Lesson Plan**: Three difficulty levels (Easy, Medium, Hard) to guide you from the home row to full keyboard mastery.
+-   **Certificate Generation**: Earn personalized certificates with your actual performance stats after completing all lessons in each level.
+-   **Progress Tracking**: Visual indicators showing completed lessons with checkmarks and progress dots.
+-   **Celebration Animations**: Confetti celebration and congratulations popup when completing all lessons in a level.
+-   **Level Navigation**: Smart navigation buttons to progress seamlessly from Easy → Medium → Hard levels.
 -   **Visual On-Screen Keyboard**: An interactive keyboard that highlights the next key to press and provides finger guides.
 -   **Post-Lesson Reports**: Detailed summaries after each lesson, including final stats and a list of your most challenging keys.
 -   **Minimalist & Responsive Design**: A clean, beautiful, and distraction-free interface that works flawlessly on desktop, tablet, and mobile devices.
@@ -22,7 +26,8 @@ QwertyFlow is a modern, minimalist web-based application designed to teach and i
 -   **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
 -   **Icons**: [Lucide React](https://lucide.dev/)
 -   **Animation**: [Framer Motion](https://www.framer.com/motion/)
--   **Deployment**: [Cloudflare Pages & Workers](https://workers.cloudflare.com/)
+-   **Confetti Effects**: [canvas-confetti](https://www.npmjs.com/package/canvas-confetti)
+-   **Deployment**: [Netlify](https://www.netlify.com/)
 
 ## 🚀 Getting Started
 
@@ -36,11 +41,11 @@ You need to have [Bun](https://bun.sh/) installed on your machine.
 
 1.  Clone the repository to your local machine:
     ```bash
-    git clone https://github.com/your-username/qwertyflow.git
+    git clone https://github.com/fajarsodik-ut/qwerty-flow.git
     ```
 2.  Navigate into the project directory:
     ```bash
-    cd qwertyflow
+    cd qwerty-flow
     ```
 3.  Install the dependencies using Bun:
     ```bash
@@ -61,40 +66,38 @@ The application will be available at `http://localhost:3000`.
 
 Upon launching the application, you are immediately presented with the typing arena.
 
-1.  **Select a Level**: Choose between 'Easy', 'Medium', or 'Hard' using the tabs at the top.
+1.  **Select a Level**: Choose between 'Mudah' (Easy), 'Sedang' (Medium), or 'Sulit' (Hard) using the tabs at the top.
 2.  **Start Typing**: Begin typing the text shown in the prompt area.
 3.  **Get Feedback**: Watch the real-time feedback on your input and the visual keyboard.
-4.  **Review Results**: Once you complete a lesson, a performance report will appear with your stats.
-5.  **Practice Again**: Close the report to select a new lesson or retry the current one.
+4.  **Track Progress**: Complete lessons to earn checkmarks and see your progress indicators.
+5.  **Review Results**: Once you complete a lesson, a performance report will appear with your stats.
+6.  **Generate Certificate**: After completing all 5 lessons in a level, click the certificate button to generate your personalized certificate with your mean WPM and accuracy.
+7.  **Celebrate & Progress**: Enjoy the confetti celebration and use the navigation buttons to advance to the next difficulty level.
+8.  **Practice Again**: Continue improving your typing skills across all difficulty levels.
 
 ## ⚙️ Available Scripts
 
 -   `bun run dev`: Starts the development server.
 -   `bun run build`: Creates a production-ready build of the application.
 -   `bun run lint`: Lints the codebase to check for errors.
--   `bun run deploy`: Deploys the application to Cloudflare.
+-   `bun run preview`: Preview the production build locally.
 
 ## ☁️ Deployment
 
-This project is optimized for deployment on the Cloudflare network.
+This project is optimized for deployment on Netlify.
 
-### Deploy with a Click
+### Deploy to Netlify
 
-You can deploy your own version of this project with a single click.
+1.  Push your code to GitHub
+2.  Go to [Netlify](https://app.netlify.com/)
+3.  Click "Add new site" → "Import an existing project"
+4.  Select your GitHub repository
+5.  Configure build settings:
+    -   **Build command**: `bun run build`
+    -   **Publish directory**: `dist`
+6.  Click "Deploy site"
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/fajarsodik-ut/qwerty-flow)
-
-### Manual Deployment via Wrangler
-
-1.  Log in to Wrangler:
-    ```bash
-    bunx wrangler login
-    ```
-2.  Run the deployment script from the project's root directory:
-    ```bash
-    bun run deploy
-    ```
-    Wrangler will handle the build process and deploy your application to Cloudflare Pages.
+Your site will be automatically deployed and you'll get a live URL!
 
 ## 🤝 Contributing
 
