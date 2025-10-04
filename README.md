@@ -23,16 +23,38 @@ This project leverages modern web technologies to deliver a fast, responsive, an
 | **[React](https://react.dev/)** | UI library for building interactive components |
 | **[TypeScript](https://www.typescriptlang.org/)** | Type-safe JavaScript for better code quality |
 | **[Vite](https://vitejs.dev/)** | Lightning-fast build tool and dev server |
-| **[Zustand](https://zustand-demo.pmnd.rs/)** | Lightweight state management |
-| **[Tailwind CSS](https://tailwindcss.com/)** | Utility-first CSS framework |
-| **[shadcn/ui](https://ui.shadcn.com/)** | Beautiful, accessible UI components |
-| **[Radix UI](https://www.radix-ui.com/)** | Unstyled, accessible component primitives |
-| **[Lucide React](https://lucide.dev/)** | Beautiful icon library |
-| **[Framer Motion](https://www.framer.com/motion/)** | Production-ready animation library |
-| **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)** | Celebration confetti effects |
-| **[React Router](https://reactrouter.com/)** | Client-side routing |
+| **[Zustand](https://zustand-demo.pmnd.rs/)** | Lightweight state management for lesson state and progress |
+| **[Tailwind CSS](https://tailwindcss.com/)** | Utility-first CSS framework for styling |
+| **[shadcn/ui](https://ui.shadcn.com/)** | Beautiful, accessible UI components (Dialog, AlertDialog, Button, Card) |
+| **[Radix UI](https://www.radix-ui.com/)** | Unstyled, accessible component primitives (Dialog, Tabs) |
+| **[Lucide React](https://lucide.dev/)** | Beautiful icon library for UI elements |
+| **[Framer Motion](https://www.framer.com/motion/)** | Production-ready animation library for smooth transitions and celebrations |
+| **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)** | Celebration confetti effects on level completion |
+| **[React Router](https://reactrouter.com/)** | Client-side routing for navigation |
+| **[date-fns](https://date-fns.org/)** | Date formatting utility for certificates |
 | **[Bun](https://bun.sh/)** | Fast JavaScript runtime and package manager |
 | **[Netlify](https://www.netlify.com/)** | Modern web hosting and deployment |
+
+### Core Feature Libraries
+
+#### Virtual Keyboard System
+| Library/Technology | Usage |
+|-------------------|--------|
+| **React useState** | Managing keyboard state and active key highlighting |
+| **JavaScript KeyboardEvent** | Detecting real keyboard input and syncing with virtual keyboard |
+| **Tailwind CSS** | Styling keyboard keys with color-coded finger guides |
+| **CSS Grid & Flexbox** | Responsive keyboard layout that adapts to screen size |
+| **Custom Key Mapping** | Mapping physical keyboard keys to virtual keyboard visual representation |
+
+#### Certificate Generation System
+| Library/Technology | Usage |
+|-------------------|--------|
+| **Radix UI Dialog** | Modal component for certificate input and preview |
+| **window.open()** | Opening standalone window for PDF generation |
+| **Inline CSS Styles** | Preserving certificate design when printing to PDF |
+| **Google Fonts (Dancing Script)** | Elegant cursive font for certificate names |
+| **Browser Print API** | Native browser printing functionality for PDF export |
+| **LocalStorage** | Storing and retrieving user performance data (WPM, accuracy) |
 
 ---
 
