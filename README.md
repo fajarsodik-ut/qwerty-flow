@@ -18,55 +18,59 @@ Whether you''re a complete beginner or looking to improve your typing speed and 
 
 This project leverages modern web technologies to deliver a fast, responsive, and delightful user experience:
 
-| Technology | Purpose |
-|------------|---------|
-| **[React](https://react.dev/)** | UI library for building interactive components |
-| **[TypeScript](https://www.typescriptlang.org/)** | Type-safe JavaScript for better code quality |
-| **[Vite](https://vitejs.dev/)** | Lightning-fast build tool and dev server |
-| **[Zustand](https://zustand-demo.pmnd.rs/)** | Lightweight state management for lesson state and progress |
-| **[Tailwind CSS](https://tailwindcss.com/)** | Utility-first CSS framework for styling |
-| **[shadcn/ui](https://ui.shadcn.com/)** | Beautiful, accessible UI components (Dialog, AlertDialog, Button, Card) |
-| **[Radix UI](https://www.radix-ui.com/)** | Unstyled, accessible component primitives (Dialog, Tabs) |
-| **[Lucide React](https://lucide.dev/)** | Beautiful icon library for UI elements |
-| **[Framer Motion](https://www.framer.com/motion/)** | Production-ready animation library for smooth transitions and celebrations |
-| **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)** | Celebration confetti effects on level completion |
-| **[React Router](https://reactrouter.com/)** | Client-side routing for navigation |
-| **[date-fns](https://date-fns.org/)** | Date formatting utility for certificates |
-| **[Bun](https://bun.sh/)** | Fast JavaScript runtime and package manager |
-| **[Netlify](https://www.netlify.com/)** | Modern web hosting and deployment |
+| Technology                                                           | Purpose                                                                    |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **[React](https://react.dev/)**                                      | UI library for building interactive components                             |
+| **[TypeScript](https://www.typescriptlang.org/)**                    | Type-safe JavaScript for better code quality                               |
+| **[Vite](https://vitejs.dev/)**                                      | Lightning-fast build tool and dev server                                   |
+| **[Zustand](https://zustand-demo.pmnd.rs/)**                         | Lightweight state management for lesson state and progress                 |
+| **[Tailwind CSS](https://tailwindcss.com/)**                         | Utility-first CSS framework for styling                                    |
+| **[shadcn/ui](https://ui.shadcn.com/)**                              | Beautiful, accessible UI components (Dialog, AlertDialog, Button, Card)    |
+| **[Radix UI](https://www.radix-ui.com/)**                            | Unstyled, accessible component primitives (Dialog, Tabs)                   |
+| **[Lucide React](https://lucide.dev/)**                              | Beautiful icon library for UI elements                                     |
+| **[Framer Motion](https://www.framer.com/motion/)**                  | Production-ready animation library for smooth transitions and celebrations |
+| **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)** | Celebration confetti effects on level completion                           |
+| **[React Router](https://reactrouter.com/)**                         | Client-side routing for navigation                                         |
+| **[date-fns](https://date-fns.org/)**                                | Date formatting utility for certificates                                   |
+| **[Bun](https://bun.sh/)**                                           | Fast JavaScript runtime and package manager                                |
+| **[Netlify](https://www.netlify.com/)**                              | Modern web hosting and deployment                                          |
 
 ### Core Feature Libraries
 
 #### Virtual Keyboard System
-| Library/Technology | Usage |
-|-------------------|--------|
-| **React useState** | Managing keyboard state and active key highlighting |
-| **JavaScript KeyboardEvent** | Detecting real keyboard input and syncing with virtual keyboard |
-| **Tailwind CSS** | Styling keyboard keys with color-coded finger guides |
-| **CSS Grid & Flexbox** | Responsive keyboard layout that adapts to screen size |
-| **Custom Key Mapping** | Mapping physical keyboard keys to virtual keyboard visual representation |
+
+| Library/Technology           | Usage                                                                    |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| **React useState**           | Managing keyboard state and active key highlighting                      |
+| **JavaScript KeyboardEvent** | Detecting real keyboard input and syncing with virtual keyboard          |
+| **Tailwind CSS**             | Styling keyboard keys with color-coded finger guides                     |
+| **CSS Grid & Flexbox**       | Responsive keyboard layout that adapts to screen size                    |
+| **Custom Key Mapping**       | Mapping physical keyboard keys to virtual keyboard visual representation |
 
 #### Certificate Generation System
-| Library/Technology | Usage |
-|-------------------|--------|
-| **Radix UI Dialog** | Modal component for certificate input and preview |
-| **window.open()** | Opening standalone window for PDF generation |
-| **Inline CSS Styles** | Preserving certificate design when printing to PDF |
-| **Google Fonts (Dancing Script)** | Elegant cursive font for certificate names |
-| **Browser Print API** | Native browser printing functionality for PDF export |
-| **LocalStorage** | Storing and retrieving user performance data (WPM, accuracy) |
+
+| Library/Technology                | Usage                                                        |
+| --------------------------------- | ------------------------------------------------------------ |
+| **Radix UI Dialog**               | Modal component for certificate input and preview            |
+| **window.open()**                 | Opening standalone window for PDF generation                 |
+| **Inline CSS Styles**             | Preserving certificate design when printing to PDF           |
+| **Google Fonts (Dancing Script)** | Elegant cursive font for certificate names                   |
+| **Browser Print API**             | Native browser printing functionality for PDF export         |
+| **LocalStorage**                  | Storing and retrieving user performance data (WPM, accuracy) |
 
 ---
 
 ## ✨ Features
 
 ### Core Typing Features
+
 - ⌨️ **Real-time Feedback**: Instant visual cues for correct (green) and incorrect (red) keystrokes
 - 📊 **Live Performance Metrics**: Track your Words Per Minute (WPM) and Accuracy as you type
 - 🎯 **Visual On-Screen Keyboard**: Interactive keyboard that highlights the next key to press with finger guides
 - 📈 **Post-Lesson Reports**: Detailed summaries after each lesson, including final stats and a list of your most challenging keys
 
 ### Learning Path & Progress
+
 - 📚 **Structured Lesson Plan**: Three difficulty levels with 5 lessons each:
   - **Mudah (Easy)**: Home row keys and basic characters
   - **Sedang (Medium)**: All letters and common punctuation
@@ -75,12 +79,14 @@ This project leverages modern web technologies to deliver a fast, responsive, an
 - 📍 **Progress Indicators**: Dots on certificate button showing lesson completion status
 
 ### Achievements & Motivation
+
 - 🏆 **Certificate Generation**: Earn personalized certificates with your actual performance stats (mean WPM & accuracy) after completing all lessons in each level
 - 🎉 **Celebration Animations**: Confetti celebration and congratulations popup when completing all lessons in a level
 - 🚀 **Level Navigation**: Smart navigation buttons to progress seamlessly from Mudah → Sedang → Sulit levels
 - 💾 **Local Storage**: Your progress is saved automatically and persists across sessions
 
 ### User Experience
+
 - 🎨 **Minimalist & Responsive Design**: Clean, beautiful, and distraction-free interface that works flawlessly on desktop, tablet, and mobile devices
 - 🌓 **Dark Mode Support**: Toggle between light and dark themes for comfortable typing in any lighting condition
 - 🔒 **No Accounts Required**: Jump right into a lesson without the friction of signing up
@@ -105,21 +111,25 @@ curl -fsSL https://bun.sh/install | bash
 ### Installation Steps
 
 1. **Clone the repository** to your local machine:
+
    ```bash
    git clone https://github.com/fajarsodik-ut/qwerty-flow.git
    ```
 
 2. **Navigate** into the project directory:
+
    ```bash
    cd qwerty-flow
    ```
 
 3. **Install dependencies** using Bun:
+
    ```bash
    bun install
    ```
 
 4. **Start the development server**:
+
    ```bash
    bun run dev
    ```
@@ -133,12 +143,12 @@ The application will be running with hot module reload enabled. Any changes you 
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `bun run dev` | Starts the development server with HMR |
-| `bun run build` | Creates optimized production build in `dist/` |
-| `bun run preview` | Preview the production build locally |
-| `bun run lint` | Lints the codebase to check for errors |
+| Command           | Description                                   |
+| ----------------- | --------------------------------------------- |
+| `bun run dev`     | Starts the development server with HMR        |
+| `bun run build`   | Creates optimized production build in `dist/` |
+| `bun run preview` | Preview the production build locally          |
+| `bun run lint`    | Lints the codebase to check for errors        |
 
 ---
 
@@ -149,39 +159,42 @@ This project was developed with significant assistance from **AI tools** (GitHub
 ### AI-Assisted Development Process
 
 #### 1. **Code Generation & Architecture**
+
 - AI helped scaffold the initial React + TypeScript project structure
 - Generated boilerplate code for components, state management, and routing
 - Suggested optimal file organization and naming conventions
 - Created TypeScript interfaces and types for type safety
 
 #### 2. **Feature Implementation**
+
 - **Certificate System**: AI assisted in designing the certificate generation logic, including:
   - PDF printing functionality using standalone window approach
   - Performance stats calculation (mean WPM and accuracy)
   - Certificate design with inline styles for print preservation
-  
 - **Progress Tracking**: AI helped implement:
   - LocalStorage-based progress persistence
   - Visual progress indicators with checkmarks
   - SessionStorage for one-time celebration popups
-  
 - **Animation & UX**: AI suggested and implemented:
   - Confetti effects using canvas-confetti
   - Framer Motion animations for smooth transitions
   - Congratulations popup with celebration timing
 
 #### 3. **Problem Solving & Debugging**
+
 - **Input Field Issue**: AI diagnosed that the global keyboard handler was preventing text input in modal fields and provided the fix to detect and skip INPUT/TEXTAREA elements
 - **PDF Printing Bug**: AI identified that React Dialog portals interfere with browser print functionality and suggested the standalone HTML window solution
 - **State Management**: AI helped optimize Zustand store structure and prevent unnecessary re-renders
 
 #### 4. **Code Quality & Best Practices**
+
 - AI suggested accessibility improvements using Radix UI primitives
 - Recommended responsive design patterns with Tailwind CSS
 - Helped implement proper TypeScript typing throughout the codebase
 - Suggested code splitting and lazy loading strategies
 
 #### 5. **Documentation**
+
 - AI assisted in writing comprehensive code comments
 - Generated this detailed README with proper markdown formatting
 - Created clear commit messages following conventional commits standard
@@ -196,6 +209,7 @@ This project was developed with significant assistance from **AI tools** (GitHub
 ### Learning & Collaboration
 
 This project demonstrates effective **human-AI collaboration** where:
+
 - 🧠 **Human provides**: Vision, requirements, creative decisions, testing
 - 🤖 **AI provides**: Code implementation, best practices, problem-solving, optimization
 - 🤝 **Result**: Faster development without sacrificing quality or learning
